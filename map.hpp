@@ -329,28 +329,28 @@ class map {
         */
 		iterator insert(iterator pos, const value_type& value)
 		{
-			if (pos->first > value.first) // on decremente
+			if (_comp(value.first, pos->first)) // on decremente pos->first > value.first
 			{
 				iterator previous(pos);
 				previous--;
-				while (previous != end() && previous->first >= value.first)
+				while (previous != end() && !_comp(previous->first, value.first)) //previous->first >= value.first
 				{
 					previous--;
 					pos--;
 				}
 			}
-			else if (pos->first < value.first ) // on incremente
+			else if (_comp(pos->first, value.first)) // on incremente pos->first < value.first
 			{
 				iterator next(pos);
 				next++;
-				while(next != end() && next->first <= value.first)
+				while(next != end() && !_comp(value.first, next->first)) // next->first <= value.first
 				{
 					next++;
 					pos++;
 				}
 			}
 
-			if (pos != end() && pos->first == value.first)
+			if (pos != end() && (pos->first == value.first))// (_comp(pos->first, value.first) && _comp(value.first, pos->first))
 				return pos;
 
 			_node_count++;
