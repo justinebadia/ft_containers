@@ -1,0 +1,555 @@
+|| ------------------------------------------------------ ||
+|| ------------------------- MAP ------------------------ ||
+|| ------------------------------------------------------ ||
+
+
+
+|| ------------------ DEFAULT CONSTRUCTOR ------------------ || 
+ --> PRINT MAP  :
+  --> EMPTY MAP
+
+
+
+|| --------------------- COPY CONSTRUCTOR ------------------ ||
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 249 
+KEY = 1  |  VALUE = 18658 
+KEY = 2  |  VALUE = 11272 
+KEY = 3  |  VALUE = 878 
+KEY = 4  |  VALUE = 12709 
+KEY = 5  |  VALUE = 13165 
+KEY = 6  |  VALUE = 18042 
+KEY = 7  |  VALUE = 22503 
+KEY = 8  |  VALUE = 6729 
+KEY = 9  |  VALUE = 17612 
+KEY = 10  |  VALUE = 8169 
+KEY = 11  |  VALUE = 22157 
+KEY = 12  |  VALUE = 20933 
+KEY = 13  |  VALUE = 5278 
+KEY = 14  |  VALUE = 20335 
+KEY = 15  |  VALUE = 7826 
+KEY = 16  |  VALUE = 4267 
+KEY = 17  |  VALUE = 2633 
+KEY = 18  |  VALUE = 4149 
+KEY = 19  |  VALUE = 8821 
+KEY = 20  |  VALUE = 10672 
+KEY = 21  |  VALUE = 19336 
+KEY = 22  |  VALUE = 16745 
+KEY = 23  |  VALUE = 19091 
+KEY = 24  |  VALUE = 11357 
+
+ --> MAP SIZE = 25
+
+
+|| --------------------- RANGE CONSTRUCTOR ----------------- ||
+
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 16708 
+KEY = 1  |  VALUE = 15668 
+KEY = 2  |  VALUE = 13124 
+KEY = 3  |  VALUE = 9530 
+KEY = 4  |  VALUE = 2722 
+KEY = 5  |  VALUE = 3549 
+KEY = 6  |  VALUE = 22801 
+KEY = 7  |  VALUE = 15977 
+KEY = 8  |  VALUE = 8228 
+KEY = 9  |  VALUE = 10298 
+KEY = 10  |  VALUE = 3635 
+KEY = 11  |  VALUE = 23865 
+KEY = 12  |  VALUE = 14063 
+KEY = 13  |  VALUE = 14425 
+KEY = 14  |  VALUE = 24115 
+KEY = 15  |  VALUE = 629 
+
+ --> MAP SIZE = 16
+
+
+|| ----------------------- COPY OPERATOR ------------------- ||
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 9195 
+KEY = 1  |  VALUE = 10404 
+KEY = 2  |  VALUE = 19298 
+KEY = 3  |  VALUE = 21123 
+KEY = 4  |  VALUE = 21882 
+KEY = 5  |  VALUE = 6566 
+KEY = 6  |  VALUE = 5337 
+KEY = 7  |  VALUE = 3144 
+KEY = 8  |  VALUE = 19897 
+KEY = 9  |  VALUE = 5828 
+KEY = 10  |  VALUE = 19358 
+KEY = 11  |  VALUE = 7397 
+KEY = 12  |  VALUE = 2904 
+KEY = 13  |  VALUE = 21231 
+KEY = 14  |  VALUE = 19175 
+KEY = 15  |  VALUE = 16298 
+KEY = 16  |  VALUE = 5399 
+KEY = 17  |  VALUE = 15412 
+KEY = 18  |  VALUE = 23557 
+KEY = 19  |  VALUE = 13008 
+KEY = 20  |  VALUE = 968 
+KEY = 21  |  VALUE = 4530 
+
+ --> MAP SIZE = 22
+
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 9195 
+KEY = 1  |  VALUE = 10404 
+KEY = 2  |  VALUE = 19298 
+KEY = 3  |  VALUE = 21123 
+KEY = 4  |  VALUE = 21882 
+KEY = 5  |  VALUE = 6566 
+KEY = 6  |  VALUE = 5337 
+KEY = 7  |  VALUE = 3144 
+KEY = 8  |  VALUE = 19897 
+KEY = 9  |  VALUE = 5828 
+KEY = 10  |  VALUE = 19358 
+KEY = 11  |  VALUE = 7397 
+KEY = 12  |  VALUE = 2904 
+KEY = 13  |  VALUE = 21231 
+KEY = 14  |  VALUE = 19175 
+KEY = 15  |  VALUE = 16298 
+KEY = 16  |  VALUE = 5399 
+KEY = 17  |  VALUE = 15412 
+KEY = 18  |  VALUE = 23557 
+KEY = 19  |  VALUE = 13008 
+KEY = 20  |  VALUE = 968 
+KEY = 21  |  VALUE = 4530 
+
+ --> MAP SIZE = 22
+
+
+|| ----------------------- GET ALLOCATOR ------------------- ||
+ALLOC 40 bytes.
+
+|| ------------------------------------------------------ ||
+|| ---------------------- ITERATORS --------------------- ||
+|| ------------------------------------------------------ ||
+
+
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 22942 
+KEY = 1  |  VALUE = 17082 
+KEY = 2  |  VALUE = 5767 
+KEY = 3  |  VALUE = 10695 
+KEY = 4  |  VALUE = 23671 
+KEY = 5  |  VALUE = 23590 
+KEY = 6  |  VALUE = 14738 
+KEY = 7  |  VALUE = 6616 
+KEY = 8  |  VALUE = 5640 
+KEY = 9  |  VALUE = 12335 
+KEY = 10  |  VALUE = 22972 
+KEY = 11  |  VALUE = 24095 
+KEY = 12  |  VALUE = 8454 
+KEY = 13  |  VALUE = 12289 
+KEY = 14  |  VALUE = 23905 
+KEY = 15  |  VALUE = 11123 
+
+ --> MAP SIZE = 16
+
+ --> BEGIN : 22942
+ --> END : 11123
+ --> RBEGIN : 11123
+ --> REND : 22942
+
+|| ------------------------------------------------------- ||
+|| --------------------- ELEMENT ACCESS ------------------ ||
+|| ------------------------------------------------------- ||
+
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 1770 
+KEY = 1  |  VALUE = 4094 
+KEY = 2  |  VALUE = 12844 
+KEY = 3  |  VALUE = 15534 
+KEY = 4  |  VALUE = 15394 
+KEY = 5  |  VALUE = 18738 
+KEY = 6  |  VALUE = 9590 
+KEY = 7  |  VALUE = 20159 
+KEY = 8  |  VALUE = 14947 
+KEY = 9  |  VALUE = 7217 
+KEY = 10  |  VALUE = 5539 
+KEY = 11  |  VALUE = 17385 
+KEY = 12  |  VALUE = 19885 
+KEY = 13  |  VALUE = 7420 
+KEY = 14  |  VALUE = 6968 
+KEY = 15  |  VALUE = 24915 
+KEY = 16  |  VALUE = 13534 
+KEY = 17  |  VALUE = 21011 
+KEY = 18  |  VALUE = 24152 
+KEY = 19  |  VALUE = 2295 
+KEY = 20  |  VALUE = 15396 
+KEY = 21  |  VALUE = 1815 
+KEY = 22  |  VALUE = 15033 
+KEY = 23  |  VALUE = 19397 
+KEY = 24  |  VALUE = 10547 
+KEY = 25  |  VALUE = 21210 
+KEY = 26  |  VALUE = 5211 
+
+ --> MAP SIZE = 27
+|| ---------------------------- AT ------------------------- ||
+value at position 2 =  12844
+value at position 5 =  18738
+value at position 15 =  24915
+value at position 100 =  map::at:  key not found
+|| ------------------------ OPERATOR[] --------------------- ||
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 1770 
+KEY = 1  |  VALUE = 4094 
+KEY = 2  |  VALUE = 12844 
+KEY = 3  |  VALUE = 15534 
+KEY = 4  |  VALUE = 15394 
+KEY = 5  |  VALUE = 18738 
+KEY = 6  |  VALUE = 9590 
+KEY = 7  |  VALUE = 20159 
+KEY = 8  |  VALUE = 14947 
+KEY = 9  |  VALUE = 7217 
+KEY = 10  |  VALUE = 5539 
+KEY = 11  |  VALUE = 17385 
+KEY = 12  |  VALUE = 19885 
+KEY = 13  |  VALUE = 7420 
+KEY = 14  |  VALUE = 6968 
+KEY = 15  |  VALUE = 24915 
+KEY = 16  |  VALUE = 13534 
+KEY = 17  |  VALUE = 21011 
+KEY = 18  |  VALUE = 24152 
+KEY = 19  |  VALUE = 2295 
+KEY = 20  |  VALUE = 15396 
+KEY = 21  |  VALUE = 1815 
+KEY = 22  |  VALUE = 15033 
+KEY = 23  |  VALUE = 19397 
+KEY = 24  |  VALUE = 10547 
+KEY = 25  |  VALUE = 21210 
+KEY = 26  |  VALUE = 5211 
+
+ --> MAP SIZE = 27
+value at position [2] =  12844
+value at position [5] =  18738
+value at position [15] =  24915
+value at position [100]=  0
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 1770 
+KEY = 1  |  VALUE = 4094 
+KEY = 2  |  VALUE = 12844 
+KEY = 3  |  VALUE = 15534 
+KEY = 4  |  VALUE = 15394 
+KEY = 5  |  VALUE = 18738 
+KEY = 6  |  VALUE = 9590 
+KEY = 7  |  VALUE = 20159 
+KEY = 8  |  VALUE = 14947 
+KEY = 9  |  VALUE = 7217 
+KEY = 10  |  VALUE = 5539 
+KEY = 11  |  VALUE = 17385 
+KEY = 12  |  VALUE = 19885 
+KEY = 13  |  VALUE = 7420 
+KEY = 14  |  VALUE = 6968 
+KEY = 15  |  VALUE = 24915 
+KEY = 16  |  VALUE = 13534 
+KEY = 17  |  VALUE = 21011 
+KEY = 18  |  VALUE = 24152 
+KEY = 19  |  VALUE = 2295 
+KEY = 20  |  VALUE = 15396 
+KEY = 21  |  VALUE = 1815 
+KEY = 22  |  VALUE = 15033 
+KEY = 23  |  VALUE = 19397 
+KEY = 24  |  VALUE = 10547 
+KEY = 25  |  VALUE = 21210 
+KEY = 26  |  VALUE = 5211 
+KEY = 100  |  VALUE = 0 
+
+ --> MAP SIZE = 28
+|| ------------------------------------------------------- ||
+|| ----------------------- MODIFIERS --------------------- ||
+|| ------------------------------------------------------- ||
+
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 22761 
+KEY = 1  |  VALUE = 12335 
+KEY = 2  |  VALUE = 2995 
+KEY = 3  |  VALUE = 12767 
+KEY = 4  |  VALUE = 4874 
+KEY = 5  |  VALUE = 15556 
+KEY = 6  |  VALUE = 18872 
+KEY = 7  |  VALUE = 20094 
+KEY = 8  |  VALUE = 13755 
+KEY = 9  |  VALUE = 1407 
+KEY = 10  |  VALUE = 5193 
+KEY = 11  |  VALUE = 15680 
+KEY = 12  |  VALUE = 16855 
+KEY = 13  |  VALUE = 20963 
+
+ --> MAP SIZE = 14
+|| ------------------------- CLEAR ------------------------- ||
+ --> PRINT MAP  :
+  --> EMPTY MAP
+
+
+|| ------------------------- ERASE ------------------------- ||
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 13108 
+KEY = 1  |  VALUE = 2331 
+KEY = 2  |  VALUE = 12638 
+KEY = 3  |  VALUE = 14997 
+KEY = 4  |  VALUE = 4849 
+KEY = 5  |  VALUE = 20731 
+KEY = 6  |  VALUE = 23014 
+KEY = 7  |  VALUE = 11775 
+KEY = 8  |  VALUE = 5180 
+KEY = 9  |  VALUE = 20223 
+KEY = 10  |  VALUE = 13260 
+KEY = 11  |  VALUE = 16545 
+KEY = 12  |  VALUE = 12525 
+
+ --> MAP SIZE = 13
+
+--> erase begin()
+ --> PRINT MAP  :
+KEY = 1  |  VALUE = 2331 
+KEY = 2  |  VALUE = 12638 
+KEY = 3  |  VALUE = 14997 
+KEY = 4  |  VALUE = 4849 
+KEY = 5  |  VALUE = 20731 
+KEY = 6  |  VALUE = 23014 
+KEY = 7  |  VALUE = 11775 
+KEY = 8  |  VALUE = 5180 
+KEY = 9  |  VALUE = 20223 
+KEY = 10  |  VALUE = 13260 
+KEY = 11  |  VALUE = 16545 
+KEY = 12  |  VALUE = 12525 
+
+ --> MAP SIZE = 12
+
+--> erase key 12
+ --> PRINT MAP  :
+KEY = 1  |  VALUE = 2331 
+KEY = 2  |  VALUE = 12638 
+KEY = 3  |  VALUE = 14997 
+KEY = 4  |  VALUE = 4849 
+KEY = 5  |  VALUE = 20731 
+KEY = 6  |  VALUE = 23014 
+KEY = 7  |  VALUE = 11775 
+KEY = 8  |  VALUE = 5180 
+KEY = 9  |  VALUE = 20223 
+KEY = 10  |  VALUE = 13260 
+KEY = 11  |  VALUE = 16545 
+
+ --> MAP SIZE = 11
+
+--> erase(begin(),end())
+ --> PRINT MAP  :
+  --> EMPTY MAP
+
+
+|| ------------------------- INSERT ------------------------ ||
+--> insert(value_type)
+ --> PRINT MAP  :
+KEY = 1  |  VALUE = Tchuss 
+KEY = 12  |  VALUE = salut 
+KEY = 22  |  VALUE = ca 
+KEY = 26  |  VALUE = va 
+
+ --> MAP SIZE = 4
+
+--> insert(iterator, value_type)
+ --> PRINT MAP  :
+KEY = 1  |  VALUE = Tchuss 
+KEY = 5  |  VALUE = Oh 
+KEY = 12  |  VALUE = salut 
+KEY = 22  |  VALUE = ca 
+KEY = 26  |  VALUE = va 
+
+ --> MAP SIZE = 5
+
+--> insert(iterator, iterator)
+ --> PRINT MAP  :
+KEY = 1  |  VALUE = Tchuss 
+KEY = 5  |  VALUE = Oh 
+KEY = 12  |  VALUE = salut 
+KEY = 22  |  VALUE = ca 
+KEY = 26  |  VALUE = va 
+
+ --> MAP SIZE = 5
+
+|| ------------------------- SWAP -------------------------- ||
+-->italien
+ --> PRINT MAP  :
+KEY = 1  |  VALUE = Buongiorno 
+KEY = 12  |  VALUE = Ciao 
+KEY = 22  |  VALUE = come 
+KEY = 26  |  VALUE = va 
+
+ --> MAP SIZE = 4
+-->swap
+-->francais
+ --> PRINT MAP  :
+KEY = 1  |  VALUE = Tchuss 
+KEY = 5  |  VALUE = Oh 
+KEY = 12  |  VALUE = salut 
+KEY = 22  |  VALUE = ca 
+KEY = 26  |  VALUE = va 
+
+ --> MAP SIZE = 5
+
+|| ------------------------------------------------------- ||
+|| ----------------------- LOOK UP ----------------------- ||
+|| ------------------------------------------------------- ||
+
+ --> PRINT MAP  :
+KEY = 1  |  VALUE = Tchuss 
+KEY = 12  |  VALUE = salut 
+KEY = 22  |  VALUE = ca 
+KEY = 26  |  VALUE = va 
+
+ --> MAP SIZE = 4
+|| ------------------------- COUNT ------------------------- ||
+--> count 3 ? : 0
+--> count 1 ? : 1
+--> count 22 ? : 1
+|| ------------------------- FIND ------------------------- ||
+--> find 3 ? : 0
+--> find 1 ? : 1
+--> find 22 ? : 1
+|| ------------------------- LOWER_BOUND ------------------------ ||
+Returns an iterator pointing to the first element that is not less than
+ (i.e. greater or equal to) key
+ --> PRINT MAP  :
+KEY = 1  |  VALUE = Tchuss 
+KEY = 12  |  VALUE = salut 
+KEY = 19  |  VALUE = je 
+KEY = 22  |  VALUE = ca 
+KEY = 24  |  VALUE = test 
+KEY = 26  |  VALUE = va 
+KEY = 31  |  VALUE = bleue 
+KEY = 100  |  VALUE = suis 
+
+ --> MAP SIZE = 8
+LOWER BOUND DE 22 est -->  22 ! 
+LOWER BOUND DE 42 est -->  100 ! 
+LOWER BOUND DE 1 est -->  1 ! 
+LOWER BOUND DE 9 est -->  12 ! 
+
+|| ------------------------- UPPER_BOUND -------------------------- ||
+Returns an iterator pointing to the first elementthat is greater than key.
+UPPER BOUND DE 22 est -->  24 ! 
+UPPER BOUND DE 42 est -->  100 ! 
+UPPER BOUND DE 1 est -->  12 ! 
+UPPER BOUND DE 9 est -->  12 ! 
+
+|| ------------------------- EQUAL_RANGE ------------------------ ||
+--> equal_range -1 = No elements less than the key
+
+--> equal_range 22 = 22
+|| ------------------------------------------------------- ||
+|| ----------------------- OBSERVERS ----------------------- ||
+|| ------------------------------------------------------- ||
+
+|| ------------------------- KEY_COMP ------------------------- ||
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 21564 
+KEY = 1  |  VALUE = 6648 
+KEY = 2  |  VALUE = 550 
+KEY = 3  |  VALUE = 16976 
+KEY = 4  |  VALUE = 13554 
+KEY = 5  |  VALUE = 2504 
+KEY = 6  |  VALUE = 9748 
+KEY = 7  |  VALUE = 9378 
+KEY = 8  |  VALUE = 3209 
+KEY = 9  |  VALUE = 3553 
+KEY = 10  |  VALUE = 447 
+KEY = 11  |  VALUE = 5773 
+KEY = 12  |  VALUE = 14305 
+KEY = 13  |  VALUE = 20053 
+KEY = 14  |  VALUE = 9630 
+KEY = 15  |  VALUE = 5400 
+KEY = 16  |  VALUE = 20370 
+KEY = 17  |  VALUE = 8016 
+KEY = 18  |  VALUE = 8155 
+KEY = 19  |  VALUE = 15557 
+KEY = 20  |  VALUE = 3178 
+KEY = 21  |  VALUE = 12357 
+
+ --> MAP SIZE = 22
+KEY 9 is less than: 0 --> false
+KEY 17 is less than: 1 --> false
+KEY 0 is less than: 2 --> true
+KEY 14 is less than: 3 --> false
+KEY 20 is less than: 4 --> false
+KEY 10 is less than: 5 --> false
+KEY 1 is less than: 6 --> true
+KEY 11 is less than: 7 --> false
+KEY 14 is less than: 8 --> false
+KEY 20 is less than: 9 --> false
+KEY 16 is less than: 10 --> false
+KEY 9 is less than: 11 --> true
+KEY 8 is less than: 12 --> true
+KEY 18 is less than: 13 --> false
+KEY 6 is less than: 14 --> true
+KEY 9 is less than: 15 --> true
+KEY 3 is less than: 16 --> true
+KEY 5 is less than: 17 --> true
+KEY 9 is less than: 18 --> true
+KEY 3 is less than: 19 --> true
+KEY 0 is less than: 20 --> true
+KEY 10 is less than: 21 --> true
+|| ------------------------------------------------------- ||
+|| ----------------------- COMPARISONS ------------------- ||
+|| ------------------------------------------------------- ||
+
+--> LHS
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 7730 
+KEY = 1  |  VALUE = 24546 
+KEY = 2  |  VALUE = 16238 
+KEY = 3  |  VALUE = 9926 
+KEY = 4  |  VALUE = 24857 
+KEY = 5  |  VALUE = 114 
+KEY = 6  |  VALUE = 1360 
+KEY = 7  |  VALUE = 18418 
+KEY = 8  |  VALUE = 17585 
+KEY = 9  |  VALUE = 21015 
+KEY = 10  |  VALUE = 6102 
+KEY = 11  |  VALUE = 11643 
+KEY = 12  |  VALUE = 12967 
+KEY = 13  |  VALUE = 20269 
+KEY = 14  |  VALUE = 23303 
+KEY = 15  |  VALUE = 19103 
+KEY = 16  |  VALUE = 24385 
+KEY = 17  |  VALUE = 13459 
+
+ --> MAP SIZE = 18
+--> RHS
+ --> PRINT MAP  :
+KEY = 0  |  VALUE = 14824 
+KEY = 1  |  VALUE = 973 
+KEY = 2  |  VALUE = 21897 
+KEY = 3  |  VALUE = 3950 
+KEY = 4  |  VALUE = 13480 
+KEY = 5  |  VALUE = 13900 
+KEY = 6  |  VALUE = 12533 
+KEY = 7  |  VALUE = 17003 
+KEY = 8  |  VALUE = 20950 
+KEY = 9  |  VALUE = 8780 
+KEY = 10  |  VALUE = 16832 
+KEY = 11  |  VALUE = 8549 
+KEY = 12  |  VALUE = 6249 
+KEY = 13  |  VALUE = 16310 
+KEY = 14  |  VALUE = 983 
+KEY = 15  |  VALUE = 17040 
+KEY = 16  |  VALUE = 23650 
+KEY = 17  |  VALUE = 3229 
+KEY = 18  |  VALUE = 17746 
+KEY = 19  |  VALUE = 12230 
+KEY = 20  |  VALUE = 20776 
+KEY = 21  |  VALUE = 18244 
+KEY = 22  |  VALUE = 22696 
+KEY = 23  |  VALUE = 4064 
+KEY = 24  |  VALUE = 6598 
+KEY = 25  |  VALUE = 19940 
+
+ --> MAP SIZE = 26
+
+lhs == rhs ? : false ;
+lhs != rhs ? : true ;
+lhs > rhs ? : false ;
+lhs <= rhs ? : true ;
+lhs >= rhs ? : false ;
+lhs < rhs ? : true ;
+

@@ -545,34 +545,11 @@ class map {
 			
 			if (!_comp(node_r->value.first, key) && !_comp(key, node_r->value.first))
 				return node_r;
-			else if (key < node_r->value.first && node_r->left && node_r->left != _end)
+			else if (_comp(key, node_r->value.first) && node_r->left && node_r->left != _end) 
 				return search_by_key(node_r->left, key);
-			else if (key > node_r->value.first && node_r->right && node_r->right != _end)
+			else if (_comp(node_r->value.first, key) && node_r->right && node_r->right != _end) 
 				return search_by_key(node_r->right, key);
 			return NULL;
-		}
-
-		bool check_equal(const key_type& lhs, const key_type&rhs) 
-		{
-			if (!_comp(lhs, rhs) && !_comp(lhs, rhs)) //check si egal
-				return true;
-			else 
-				return false;
-		}
-
-		bool check_left(const key_type& lhs, const key_type& rhs)  //si vrai je vais a gauche
-		{
-			if (_comp(lhs, rhs))
-				return true;
-			return false;
-		}
-
-		bool check_right(const key_type& lhs,const key_type& rhs)  //si vrai je vais a droite
-		{
-			if (_comp(rhs, lhs))
-				return true;
-			return false;
-
 		}
 
 		node_pointer insertNode(node_pointer pos, const value_type& value)
@@ -589,27 +566,27 @@ class map {
 				return _root;
 			}
 
-			if (check_equal(pos->value.first, value.first)) //(pos->value.first == value.first)
+			if (_comp(pos->value.first, value.first) && _comp(value.first, pos->value.first)) //(pos->value.first == value.first)
 				return NULL; //node existe deja
 
-			if (check_left(pos->value.first, value.first) && pos->left && pos->left != _end) //value < pos = a gauche (pos->value.first > value.first
+			if (_comp(value.first, pos->value.first) && pos->left && pos->left != _end) //value < pos = a gauche (pos->value.first > value.first
 				return insertNode(pos->left, value);
-			if (check_right(pos->value.first, value.first) && pos->right && pos->right != _end) // value > pos = a droite
+			if (_comp(pos->value.first, value.first) && pos->right && pos->right != _end) // value > pos = a droite
 				return insertNode(pos->right, value);
 
 			node_pointer newNode = new_node(value);
 			/*cas où je peux insérer dans une leaf node*/
-			if (check_right(pos->value.first, newNode->value.first) && !pos->left) //pos->value.first > newNode->value.first
+			if (_comp(newNode->value.first, pos->value.first) && !pos->left) //pos->value.first > newNode->value.first
 				pos->left = newNode;
-			else if (check_left(pos->value.first, newNode->value.first) && !pos->right) //pos->value.first < newNode->value.first
+			else if (_comp(pos->value.first, newNode->value.first) && !pos->right) //pos->value.first < newNode->value.first
 				pos->right = newNode;
-			else if (pos->left && check_right(pos->value.first, newNode->value.first)) //  pos->value.first > newNode->value.first
+			else if (pos->left && _comp(newNode->value.first, pos->value.first)) //  pos->value.first > newNode->value.first
 			{
 				newNode->left = _end;
 				_end->right = newNode;
 				pos->left = newNode;
 			}
-			else if (pos->right && check_left(pos->value.first, newNode->value.first)) // pos->value.first < newNode->value.first
+			else if (pos->right && _comp(pos->value.first, newNode->value.first)) // pos->value.first < newNode->value.first
 			{
 				newNode->right = _end;
 				_end->left = newNode;
