@@ -9,6 +9,13 @@
 #include "iterator.hpp"
 #include "avl_iterator.hpp"
 
+/* REMINDER - si comp = std::less alors:
+*		comp(value1, value2) == value1 < value2
+*		!comp(value1, value2) == value1 >= value2
+*		comp(value2, value1) == value1 > value2
+*		!comp(value2, value1) == value1 <= value2
+*/
+
 namespace ft {
 /*
 	The first template argument is the type of the element's key, and the second template argument is the type of the element's value;
@@ -31,31 +38,31 @@ class map {
 
 	/*MEMBER TYPES*/
 	public:
-		typedef Key										key_type; /*type de données de clé stockées*/
-		typedef T										mapped_type; /*type de données stockées dans chaque élément d'une classe map*/
-		typedef Compare									key_compare; /*objet de fonction qui peut comparer deux clés de tri pour déterminer l'ordre relatif de deux éléments d'un map*/
-		typedef Allocator 								allocator_type;
+		typedef Key																key_type; /*type de données de clé stockées*/
+		typedef T																mapped_type; /*type de données stockées dans chaque élément d'une classe map*/
+		typedef Compare															key_compare; /*objet de fonction qui peut comparer deux clés de tri pour déterminer l'ordre relatif de deux éléments d'un map*/
+		typedef Allocator 														allocator_type;
 		
-		typedef ft::pair<const key_type, mapped_type>	value_type; /*type d'objet stockés comme élément d'une classe map*/
-		typedef std::ptrdiff_t 							difference_type; /*nombre d'éléments d'une classe map comprise dans une plage d'éléments pointés par des itérateurs*/
-		typedef std::size_t 							size_type; /*nombre d'éléments*/
+		typedef ft::pair<const key_type, mapped_type>							value_type; /*type d'objet stockés comme élément d'une classe map*/
+		typedef std::ptrdiff_t 													difference_type; /*nombre d'éléments d'une classe map comprise dans une plage d'éléments pointés par des itérateurs*/
+		typedef std::size_t 													size_type; /*nombre d'éléments*/
 		
-		typedef value_type& 							reference; /*référence à un élément stocké dans une classe map*/
-		typedef const value_type& 						const_reference;/*référence à un const élément stocké dans une carte pour la lecture et l’exécution d’opérations const*/
-		typedef typename Allocator::pointer				pointer;
-		typedef typename Allocator::const_pointer		const_pointer;
+		typedef value_type& 													reference; /*référence à un élément stocké dans une classe map*/
+		typedef const value_type& 												const_reference;/*référence à un const élément stocké dans une carte pour la lecture et l’exécution d’opérations const*/
+		typedef typename Allocator::pointer										pointer;
+		typedef typename Allocator::const_pointer								const_pointer;
 		
 		typedef typename ft::map_iterator<Key, T, Compare, Node>				iterator;
 		typedef typename ft::const_map_iterator<Key, T, Compare, Node>			const_iterator;	
 		
-		typedef typename ft::map_reverse_iterator<Key, T, Compare, Node>					reverse_iterator;
-		typedef typename ft::map_reverse_iterator<Key, T, Compare, Node> 					const_reverse_iterator;
+		typedef ft::reverse_iterator<iterator>									reverse_iterator;
+		typedef ft::reverse_iterator<const_iterator> 							const_reverse_iterator;
 
-		typedef Node*	    		node_pointer;
+		typedef Node*	    													node_pointer;
 
 		/* template member function that creates a new allocator object of a different type, which can be used to allocate objects of a different type. 
 		* When you call rebind, you pass a new type as a template argument, and it returns a new allocator object that is templated on that type.*/
-		typedef typename Allocator::template rebind<Node>::other node_alloc;
+		typedef typename Allocator::template rebind<Node>::other 				node_alloc;
 
 		/*objet de fonction qui peut comparer les éléments d'un map en comparant les valeurs de leurs clés pour déterminer leur ordre relatif dans le map.*/
 		class value_compare : public std::binary_function<value_type, value_type, bool>
@@ -151,58 +158,27 @@ class map {
 			return *this;
 		}
 
-/// Get a copy of the memory allocation object.
+	// Get a copy of the memory allocation object.
 		allocator_type get_allocator() const 
 		{
 			return (allocator_type());
 		}
 
 	/* ---------- ITERATORS --------------------------------------------------------- */
-		iterator begin()
-		{
-			return iterator(_end->right, _end, _comp);
-		}
+		iterator begin() { return iterator(_end->right, _end, _comp); }
+		const_iterator begin() const { return const_iterator(_end->right, _end, _comp); }
 
-		const_iterator begin() const
-		{
-			return const_iterator(_end->right, _end, _comp);
+		iterator end() { return iterator(_end, _end, _comp); }
+		const_iterator end() const { return const_iterator(_end, _end, _comp); }
 
-		}
+		reverse_iterator rbegin() { return reverse_iterator(end()); }
+		const_reverse_iterator rbegin() const { return const_reverse_iterator(end()); }
 
-		iterator end()
-		{
-			return iterator(_end, _end, _comp);
-		}
-
-		const_iterator end() const
-		{
-			return const_iterator(_end, _end, _comp);
-
-		}
-
-		reverse_iterator rbegin()
-		{
-			return reverse_iterator(_end->left, _end, _comp);
-		}
-
-		const_reverse_iterator rbegin() const
-		{
-			return const_reverse_iterator(_end->left, _end, _comp);
-		}
-
-		reverse_iterator rend()
-		{
-			return reverse_iterator(_end, _end, _comp);
-		}
-
-		const_reverse_iterator rend() const
-		{
-			return const_reverse_iterator(_end, _end, _comp);
-		}
+		reverse_iterator rend() { return reverse_iterator(begin()); }
+		const_reverse_iterator rend() const { return const_reverse_iterator(begin()); }
 	/*
 	* ---------- CAPACITY --------------------------------------------------------- *
 	*/
-
 		bool empty()
         {
 			return _node_count == 0;
@@ -329,28 +305,28 @@ class map {
         */
 		iterator insert(iterator pos, const value_type& value)
 		{
-			if (_comp(value.first, pos->first)) // on decremente pos->first > value.first
+			if (_comp(value.first, pos->first)) 
 			{
 				iterator previous(pos);
 				previous--;
-				while (previous != end() && !_comp(previous->first, value.first)) //previous->first >= value.first
+				while (previous != end() && !_comp(previous->first, value.first)) 
 				{
 					previous--;
 					pos--;
 				}
 			}
-			else if (_comp(pos->first, value.first)) // on incremente pos->first < value.first
+			else if (_comp(pos->first, value.first)) 
 			{
 				iterator next(pos);
 				next++;
-				while(next != end() && !_comp(value.first, next->first)) // next->first <= value.first
+				while(next != end() && !_comp(value.first, next->first)) 
 				{
 					next++;
 					pos++;
 				}
 			}
 
-			if (pos != end() && (pos->first == value.first))// (_comp(pos->first, value.first) && _comp(value.first, pos->first))
+			if (pos != end() && (pos->first == value.first))
 				return pos;
 
 			_node_count++;
@@ -419,7 +395,7 @@ class map {
 		{
 			iterator it = begin();
 			for(; it != end(); ++it)
-				if (!(_comp(it->first, key))) //_comp = std::less = operator<
+				if (!(_comp(it->first, key))) 
 					break;
 			return it;
 		}
@@ -428,7 +404,7 @@ class map {
 		{
 			iterator it = begin();
 			for(; it != end(); ++it)
-				if (!(_comp(it->first, key))) //_comp = std::less = operator< = !(it < key)
+				if (!(_comp(it->first, key))) 
 					break;
 			return it;
 		}
@@ -566,27 +542,27 @@ class map {
 				return _root;
 			}
 
-			if (_comp(pos->value.first, value.first) && _comp(value.first, pos->value.first)) //(pos->value.first == value.first)
+			if (_comp(pos->value.first, value.first) && _comp(value.first, pos->value.first)) 
 				return NULL; //node existe deja
 
-			if (_comp(value.first, pos->value.first) && pos->left && pos->left != _end) //value < pos = a gauche (pos->value.first > value.first
+			if (_comp(value.first, pos->value.first) && pos->left && pos->left != _end) 
 				return insertNode(pos->left, value);
-			if (_comp(pos->value.first, value.first) && pos->right && pos->right != _end) // value > pos = a droite
+			if (_comp(pos->value.first, value.first) && pos->right && pos->right != _end)
 				return insertNode(pos->right, value);
 
 			node_pointer newNode = new_node(value);
 			/*cas où je peux insérer dans une leaf node*/
-			if (_comp(newNode->value.first, pos->value.first) && !pos->left) //pos->value.first > newNode->value.first
+			if (_comp(newNode->value.first, pos->value.first) && !pos->left) 
 				pos->left = newNode;
-			else if (_comp(pos->value.first, newNode->value.first) && !pos->right) //pos->value.first < newNode->value.first
+			else if (_comp(pos->value.first, newNode->value.first) && !pos->right) 
 				pos->right = newNode;
-			else if (pos->left && _comp(newNode->value.first, pos->value.first)) //  pos->value.first > newNode->value.first
+			else if (pos->left && _comp(newNode->value.first, pos->value.first)) 
 			{
 				newNode->left = _end;
 				_end->right = newNode;
 				pos->left = newNode;
 			}
-			else if (pos->right && _comp(pos->value.first, newNode->value.first)) // pos->value.first < newNode->value.first
+			else if (pos->right && _comp(pos->value.first, newNode->value.first)) 
 			{
 				newNode->right = _end;
 				_end->left = newNode;
@@ -608,7 +584,7 @@ class map {
 			/*CASE : ROOT NODE TO DELETE */
 			if (!to_delete->parent)
 			{
-				if (to_delete->left == _end && to_delete->right == _end) // root to delete is the only node
+				if (to_delete->left == _end && to_delete->right == _end) 
 				{
 					_root = _end;
 					_end->left = _end;
@@ -876,7 +852,6 @@ bool operator>=( const ft::map<Key, T, Compare, Alloc>& x,
 {
 	return !(x < y);
 }							
-
 
 } // namespace
 
